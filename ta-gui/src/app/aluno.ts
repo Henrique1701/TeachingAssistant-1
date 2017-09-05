@@ -1,10 +1,10 @@
 import { Input } from "@angular/core";
 
 export class Aluno {
-  nome!: string;
-  cpf!: string;
-  email!: string;
-  metas!: Map<string, string>;
+  nome: string;
+  cpf: string;
+  email: string;
+  metas: Map<string,string>;
 
   constructor() {
     this.clean();
@@ -28,18 +28,9 @@ export class Aluno {
 
   cloneMetas(): Map<string,string> {
     var metas: Map<string,string> = new Map<string,string>();
-    for (let key in this.metas.entries()) {
-      let value = this.metas.get(key);
-      metas.set(key, value!);
+    for (let key in this.metas) {
+      metas[key] = this.metas[key];
     }
     return metas;
-  }
-
-  atualizaMeta(key: string, inputId: string): void {
-    var input = <HTMLSelectElement>document.getElementById(inputId);
-    var value = input.value;
-    this.metas.set(key, value!);
-    console.log(this.metas.size)
-    console.log(this.metas.values());
   }
 }

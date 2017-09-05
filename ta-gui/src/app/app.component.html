@@ -38,8 +38,8 @@
    <td>{{a.nome}}</td>
    <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
-   <td><input id="requisitos" (change)="a.atualizaMeta('requisitos', 'requisitos')" (change)="atualizarAluno(a)"></td>
-   <td><input id="gerDeConfiguracao" (change)="a.atualizaMeta('gerDeConfiguracao', 'gerDeConfiguracao')" (change)="atualizarAluno(a)"></td>
+   <td><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
+   <td><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
 </tr>
 </table>
 

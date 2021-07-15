@@ -9,12 +9,13 @@ import { AlunoService } from './aluno.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-   aluno: Aluno = {nome: "", cpf: "", email: ""};
+   aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
    alunoService = new AlunoService();
 
    gravar(a: Aluno): void {
      this.alunoService.gravar(a);
-     this.aluno = {nome: "", cpf: "", email: ""};
+     this.aluno = {nome: "", cpf: "", email: "", github: ""};
   }
 }
